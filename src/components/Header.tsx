@@ -42,17 +42,17 @@ const Header = () => {
           : 'bg-wine/30 backdrop-blur-sm'
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="home" smooth={true} duration={500} className="cursor-pointer">
-            <h1 className="text-2xl md:text-3xl font-playfair font-bold text-gold hover:text-cream transition-colors">
+          <Link to="home" smooth={true} duration={500} className="cursor-pointer flex-shrink-0">
+            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-playfair font-bold text-gold hover:text-cream transition-colors">
               Vino Coyol Premium
             </h1>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
             {navItems.map((item) => (
               <Link
                 key={item.to}
@@ -61,36 +61,36 @@ const Header = () => {
                 duration={500}
                 spy={true}
                 activeClass="text-gold"
-                className="text-cream hover:text-gold transition-colors cursor-pointer font-noto text-sm uppercase tracking-wider"
+                className="text-cream hover:text-gold transition-colors cursor-pointer font-noto text-xs xl:text-sm uppercase tracking-wider whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-1 text-cream hover:text-gold transition-colors"
+              className="flex items-center space-x-1 text-cream hover:text-gold transition-colors ml-2"
               aria-label="Toggle language"
             >
               <MdLanguage size={20} />
-              <span className="text-xs font-noto">{i18n.language === 'en' ? 'KO' : 'EN'}</span>
+              <span className="text-xs font-noto font-semibold">{i18n.language === 'en' ? 'KO' : 'EN'}</span>
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-4">
+          <div className="lg:hidden flex items-center space-x-3 sm:space-x-4">
             <button
               onClick={toggleLanguage}
-              className="text-cream hover:text-gold transition-colors"
+              className="text-cream hover:text-gold transition-colors p-1"
               aria-label="Toggle language"
             >
-              <MdLanguage size={24} />
+              <MdLanguage size={22} className="sm:w-6 sm:h-6" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-cream hover:text-gold transition-colors"
+              className="text-cream hover:text-gold transition-colors p-1"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <HiX size={28} /> : <HiMenuAlt3 size={28} />}
+              {mobileMenuOpen ? <HiX size={26} className="sm:w-7 sm:h-7" /> : <HiMenuAlt3 size={26} className="sm:w-7 sm:h-7" />}
             </button>
           </div>
         </div>
@@ -101,22 +101,25 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden mt-4 pb-4"
+            transition={{ duration: 0.3 }}
+            className="lg:hidden mt-4 pb-4 border-t border-gold/20 pt-4"
           >
-            {navItems.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                smooth={true}
-                duration={500}
-                spy={true}
-                activeClass="text-gold"
-                className="block py-2 text-cream hover:text-gold transition-colors cursor-pointer font-noto"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
+            <div className="flex flex-col space-y-1">
+              {navItems.map((item) => (
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  activeClass="text-gold bg-gold/10"
+                  className="block py-3 px-4 text-cream hover:text-gold hover:bg-gold/10 transition-all cursor-pointer font-noto rounded-lg text-base"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
           </motion.div>
         )}
       </nav>
