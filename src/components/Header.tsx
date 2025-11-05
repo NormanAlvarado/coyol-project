@@ -42,17 +42,17 @@ const Header = () => {
           : 'bg-wine/30 backdrop-blur-sm'
       }`}
     >
-      <nav className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
-        <div className="flex items-center justify-between">
+      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+        <div className="flex items-center justify-between gap-4">
           {/* Logo */}
           <Link to="home" smooth={true} duration={500} className="cursor-pointer flex-shrink-0">
-            <h1 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-playfair font-bold text-gold hover:text-cream transition-colors">
+            <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl font-playfair font-bold text-gold hover:text-cream transition-colors whitespace-nowrap">
               Vino Coyol Premium
             </h1>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
+          <div className="hidden md:flex items-center space-x-2 lg:space-x-4 xl:space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.to}
@@ -60,37 +60,38 @@ const Header = () => {
                 smooth={true}
                 duration={500}
                 spy={true}
+                offset={-80}
                 activeClass="text-gold"
-                className="text-cream hover:text-gold transition-colors cursor-pointer font-noto text-xs xl:text-sm uppercase tracking-wider whitespace-nowrap"
+                className="text-cream hover:text-gold transition-colors cursor-pointer font-noto text-xs lg:text-sm uppercase tracking-wide whitespace-nowrap"
               >
                 {item.name}
               </Link>
             ))}
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-1 text-cream hover:text-gold transition-colors ml-2"
+              className="flex items-center space-x-1 text-cream hover:text-gold transition-colors ml-1 lg:ml-2 px-2 py-1 rounded-md hover:bg-gold/10"
               aria-label="Toggle language"
             >
-              <MdLanguage size={20} />
+              <MdLanguage size={18} className="lg:w-5 lg:h-5" />
               <span className="text-xs font-noto font-semibold">{i18n.language === 'en' ? 'KO' : 'EN'}</span>
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="lg:hidden flex items-center space-x-3 sm:space-x-4">
+          <div className="md:hidden flex items-center space-x-2 sm:space-x-3">
             <button
               onClick={toggleLanguage}
-              className="text-cream hover:text-gold transition-colors p-1"
+              className="text-cream hover:text-gold transition-colors p-2 rounded-md hover:bg-gold/10"
               aria-label="Toggle language"
             >
-              <MdLanguage size={22} className="sm:w-6 sm:h-6" />
+              <MdLanguage size={20} className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-cream hover:text-gold transition-colors p-1"
+              className="text-cream hover:text-gold transition-colors p-2 rounded-md hover:bg-gold/10"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <HiX size={26} className="sm:w-7 sm:h-7" /> : <HiMenuAlt3 size={26} className="sm:w-7 sm:h-7" />}
+              {mobileMenuOpen ? <HiX size={24} className="w-6 h-6 sm:w-7 sm:h-7" /> : <HiMenuAlt3 size={24} className="w-6 h-6 sm:w-7 sm:h-7" />}
             </button>
           </div>
         </div>
@@ -102,7 +103,7 @@ const Header = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="lg:hidden mt-4 pb-4 border-t border-gold/20 pt-4"
+            className="md:hidden mt-3 sm:mt-4 pb-3 sm:pb-4 border-t border-gold/20 pt-3 sm:pt-4 overflow-hidden"
           >
             <div className="flex flex-col space-y-1">
               {navItems.map((item) => (
@@ -112,8 +113,9 @@ const Header = () => {
                   smooth={true}
                   duration={500}
                   spy={true}
+                  offset={-80}
                   activeClass="text-gold bg-gold/10"
-                  className="block py-3 px-4 text-cream hover:text-gold hover:bg-gold/10 transition-all cursor-pointer font-noto rounded-lg text-base"
+                  className="block py-2.5 sm:py-3 px-3 sm:px-4 text-cream hover:text-gold hover:bg-gold/10 transition-all cursor-pointer font-noto rounded-lg text-sm sm:text-base"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
