@@ -39,14 +39,14 @@ const Header = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-wine/95 backdrop-blur-md shadow-lg'
-          : 'bg-wine/30 backdrop-blur-sm'
+          : 'bg-sophisticated/80 backdrop-blur-md shadow-md'
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-        <div className="flex items-center justify-between gap-4">
+      <nav className="w-full mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 max-w-[1400px]">
+        <div className="flex items-center justify-between gap-2 sm:gap-4">
           {/* Logo */}
-          <Link to="home" smooth={true} duration={500} className="cursor-pointer flex-shrink-0">
-            <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl font-playfair font-bold text-gold hover:text-cream transition-colors whitespace-nowrap">
+          <Link to="home" smooth={true} duration={500} className="cursor-pointer flex-shrink-0 min-w-0">
+            <h1 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-playfair font-bold text-gold hover:text-cream transition-colors whitespace-nowrap overflow-hidden text-ellipsis">
               Vino Coyol Premium
             </h1>
           </Link>
