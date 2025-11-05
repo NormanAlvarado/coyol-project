@@ -42,17 +42,17 @@ const Header = () => {
           : 'bg-sophisticated/80 backdrop-blur-md shadow-md'
       }`}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <nav className="flex items-center justify-between py-3 sm:py-4 gap-3 sm:gap-4">
+      <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8 max-w-screen-2xl mx-auto">
+        <nav className="flex items-center justify-between py-2.5 sm:py-3 md:py-4 gap-2">
           {/* Logo */}
-          <Link to="home" smooth={true} duration={500} className="cursor-pointer flex-shrink-0">
-            <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl font-playfair font-bold text-gold hover:text-cream transition-colors">
+          <Link to="home" smooth={true} duration={500} className="cursor-pointer flex-shrink min-w-0">
+            <h1 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-playfair font-bold text-gold hover:text-cream transition-colors truncate">
               Vino Coyol Premium
             </h1>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-2 lg:space-x-4 xl:space-x-6 flex-shrink-0">
+          <div className="hidden md:flex items-center space-x-1 lg:space-x-3 xl:space-x-4 flex-shrink-0">
             {navItems.map((item) => (
               <Link
                 key={item.to}
@@ -69,29 +69,29 @@ const Header = () => {
             ))}
             <button
               onClick={toggleLanguage}
-              className="flex items-center space-x-1 text-cream hover:text-gold transition-colors ml-1 lg:ml-2 px-2 py-1 rounded-md hover:bg-gold/10 flex-shrink-0"
+              className="flex items-center space-x-1 text-cream hover:text-gold transition-colors ml-1 px-1.5 py-1 rounded-md hover:bg-gold/10 flex-shrink-0"
               aria-label="Toggle language"
             >
-              <MdLanguage size={18} className="lg:w-5 lg:h-5" />
+              <MdLanguage size={16} className="lg:w-5 lg:h-5" />
               <span className="text-xs font-noto font-semibold">{i18n.language === 'en' ? 'KO' : 'EN'}</span>
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center space-x-2 flex-shrink-0">
+          <div className="md:hidden flex items-center gap-1 flex-shrink-0">
             <button
               onClick={toggleLanguage}
-              className="text-cream hover:text-gold transition-colors p-2 rounded-md hover:bg-gold/10"
+              className="text-cream hover:text-gold transition-colors p-1.5 rounded-md hover:bg-gold/10"
               aria-label="Toggle language"
             >
-              <MdLanguage size={20} className="w-5 h-5" />
+              <MdLanguage size={20} />
             </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-cream hover:text-gold transition-colors p-2 rounded-md hover:bg-gold/10"
+              className="text-cream hover:text-gold transition-colors p-1.5 rounded-md hover:bg-gold/10"
               aria-label="Toggle menu"
             >
-              {mobileMenuOpen ? <HiX size={24} className="w-6 h-6" /> : <HiMenuAlt3 size={24} className="w-6 h-6" />}
+              {mobileMenuOpen ? <HiX size={24} /> : <HiMenuAlt3 size={24} />}
             </button>
           </div>
         </nav>
@@ -103,9 +103,9 @@ const Header = () => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden pb-3 border-t border-gold/20 pt-3 overflow-hidden"
+            className="md:hidden pb-2 border-t border-gold/20 pt-2 overflow-hidden"
           >
-            <div className="flex flex-col space-y-1">
+            <div className="flex flex-col space-y-0.5">
               {navItems.map((item) => (
                 <Link
                   key={item.to}
@@ -115,7 +115,7 @@ const Header = () => {
                   spy={true}
                   offset={-80}
                   activeClass="text-gold bg-gold/10"
-                  className="block py-2.5 px-3 text-cream hover:text-gold hover:bg-gold/10 transition-all cursor-pointer font-noto rounded-lg text-sm"
+                  className="block py-2 px-2 text-cream hover:text-gold hover:bg-gold/10 transition-all cursor-pointer font-noto rounded-md text-sm"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
