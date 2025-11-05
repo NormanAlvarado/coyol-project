@@ -37,22 +37,22 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-20 bg-cream">
-      <div className="container mx-auto px-6">
+    <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-cream">
+      <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-playfair font-bold text-wine mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-wine mb-3 sm:mb-4 px-4">
             {t('gallery.title')}
           </h2>
-          <p className="text-xl font-noto text-wine/70">{t('gallery.subtitle')}</p>
+          <p className="text-base sm:text-lg lg:text-xl font-noto text-wine/70 px-4">{t('gallery.subtitle')}</p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {images.map((image, index) => (
             <motion.div
               key={index}
@@ -62,8 +62,9 @@ const Gallery = () => {
               className="relative overflow-hidden rounded-lg shadow-lg group cursor-pointer"
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => setHoveredIndex(hoveredIndex === index ? null : index)}
             >
-              <div className="relative h-80 overflow-hidden">
+              <div className="relative h-64 sm:h-72 lg:h-80 overflow-hidden">
                 <img
                   src={image.url}
                   alt={image.title}
@@ -83,13 +84,13 @@ const Gallery = () => {
                     hoveredIndex === index ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
                   }`}
                 >
-                  <h3 className="text-2xl font-playfair font-bold text-gold text-center px-4">
+                  <h3 className="text-xl sm:text-2xl font-playfair font-bold text-gold text-center px-4">
                     {image.title}
                   </h3>
                 </div>
                 {/* Golden border on hover */}
                 <div
-                  className={`absolute inset-0 border-4 border-gold transition-opacity duration-300 ${
+                  className={`absolute inset-0 border-2 sm:border-4 border-gold transition-opacity duration-300 ${
                     hoveredIndex === index ? 'opacity-100' : 'opacity-0'
                   }`}
                 />
@@ -103,10 +104,10 @@ const Gallery = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 1, delay: 0.8 }}
-          className="mt-16 text-center"
+          className="mt-10 sm:mt-12 lg:mt-16 text-center px-4"
         >
-          <div className="inline-block px-8 py-4 border-2 border-gold/30 rounded-full">
-            <p className="font-playfair text-wine italic">
+          <div className="inline-block px-6 sm:px-8 py-3 sm:py-4 border-2 border-gold/30 rounded-full">
+            <p className="font-playfair text-sm sm:text-base text-wine italic">
               Every bottle tells a story of excellence
             </p>
           </div>
