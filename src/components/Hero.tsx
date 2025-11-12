@@ -79,7 +79,7 @@ const Hero = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5, repeat: Infinity, repeatType: 'reverse' }}
-        className="hidden md:block absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2 z-20"
+        className="hidden md:block absolute bottom-6 md:bottom-10 left-1/2 transform -translate-x-1/2"
       >
         <div className="w-6 h-10 border-2 border-gold rounded-full flex justify-center">
           <div className="w-1 h-3 bg-gold rounded-full mt-2 animate-bounce" />

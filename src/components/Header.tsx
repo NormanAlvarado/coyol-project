@@ -1,14 +1,17 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { HiMenuAlt3, HiX } from 'react-icons/hi';
 import { MdLanguage } from 'react-icons/md';
+import { ChevronDown } from 'lucide-react';
 
 const Header = () => {
   const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [languageDropdownOpen, setLanguageDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,8 +21,28 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'ko' : 'en');
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setLanguageDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const languages = [
+    { code: 'en', label: 'English', flag: '🇺🇸' },
+    { code: 'es', label: 'Español', flag: '🇨🇷' },
+    { code: 'ko', label: '한국어', flag: '🇰🇷' },
+  ];
+
+  const currentLanguage = languages.find(lang => lang.code === i18n.language) || languages[0];
+
+  const changeLanguage = (langCode: string) => {
+    i18n.changeLanguage(langCode);
+    setLanguageDropdownOpen(false);
   };
 
   const navItems = [
@@ -27,6 +50,9 @@ const Header = () => {
     { name: t('nav.about'), to: 'about' },
     { name: t('nav.tasting'), to: 'tasting' },
     { name: t('nav.heritage'), to: 'heritage' },
+    { name: t('nav.games'), to: 'games' },
+    { name: t('nav.behindTheWine'), to: 'behind-the-wine' },
+    { name: t('nav.biodiversity'), to: 'biodiversity' },
     { name: t('nav.gallery'), to: 'gallery' },
     { name: t('nav.contact'), to: 'contact' },
   ];
@@ -67,25 +93,88 @@ const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <button
-              onClick={toggleLanguage}
-              className="flex items-center space-x-1 text-cream hover:text-gold transition-colors ml-1 px-1.5 py-1 rounded-md hover:bg-gold/10 flex-shrink-0"
-              aria-label="Toggle language"
-            >
-              <MdLanguage size={16} className="lg:w-5 lg:h-5" />
-              <span className="text-xs font-noto font-semibold">{i18n.language === 'en' ? 'KO' : 'EN'}</span>
-            </button>
+            
+            {/* Language Dropdown */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
+                className="flex items-center space-x-1 text-cream hover:text-gold transition-colors ml-1 px-2 py-1.5 rounded-md hover:bg-gold/10 flex-shrink-0"
+                aria-label="Select language"
+              >
+                <MdLanguage size={16} className="lg:w-5 lg:h-5" />
+                <span className="text-xs font-noto font-semibold">{currentLanguage.flag}</span>
+                <ChevronDown size={14} className={`transition-transform ${languageDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+
+              <AnimatePresence>
+                {languageDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute right-0 mt-2 w-40 bg-wine/95 backdrop-blur-md rounded-lg shadow-xl border border-gold/20 overflow-hidden z-50"
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => changeLanguage(lang.code)}
+                        className={`w-full px-4 py-2.5 text-left flex items-center space-x-2 transition-colors ${
+                          i18n.language === lang.code
+                            ? 'bg-gold/20 text-gold'
+                            : 'text-cream hover:bg-gold/10 hover:text-gold'
+                        }`}
+                      >
+                        <span className="text-lg">{lang.flag}</span>
+                        <span className="text-sm font-noto">{lang.label}</span>
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden flex items-center gap-1 flex-shrink-0">
-            <button
-              onClick={toggleLanguage}
-              className="text-cream hover:text-gold transition-colors p-1.5 rounded-md hover:bg-gold/10"
-              aria-label="Toggle language"
-            >
-              <MdLanguage size={20} />
-            </button>
+            {/* Language Dropdown Mobile */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={() => setLanguageDropdownOpen(!languageDropdownOpen)}
+                className="text-cream hover:text-gold transition-colors p-1.5 rounded-md hover:bg-gold/10"
+                aria-label="Select language"
+              >
+                <MdLanguage size={20} />
+              </button>
+
+              <AnimatePresence>
+                {languageDropdownOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute right-0 mt-2 w-36 bg-wine/95 backdrop-blur-md rounded-lg shadow-xl border border-gold/20 overflow-hidden z-50"
+                  >
+                    {languages.map((lang) => (
+                      <button
+                        key={lang.code}
+                        onClick={() => changeLanguage(lang.code)}
+                        className={`w-full px-3 py-2 text-left flex items-center space-x-2 transition-colors ${
+                          i18n.language === lang.code
+                            ? 'bg-gold/20 text-gold'
+                            : 'text-cream hover:bg-gold/10 hover:text-gold'
+                        }`}
+                      >
+                        <span className="text-base">{lang.flag}</span>
+                        <span className="text-xs font-noto">{lang.label}</span>
+                      </button>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="text-cream hover:text-gold transition-colors p-1.5 rounded-md hover:bg-gold/10"

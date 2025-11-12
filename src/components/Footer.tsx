@@ -11,7 +11,7 @@ const Footer = () => {
           {/* Logo */}
           <Link to="home" smooth={true} duration={500} className="cursor-pointer order-1">
             <h3 className="text-lg sm:text-xl font-playfair font-bold text-gold hover:text-cream transition-colors text-center md:text-left">
-              Vino Coyol Premium
+Sidus
             </h3>
           </Link>
 
