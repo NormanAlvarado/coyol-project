@@ -59,6 +59,24 @@ const Games = () => {
         { textKey: 'games.quiz.questions.q3.options.c', spirit: 'monkey' },
       ],
     },
+    {
+      id: 4,
+      questionKey: 'games.quiz.questions.q4.question',
+      options: [
+        { textKey: 'games.quiz.questions.q4.options.a', spirit: 'monkey' },
+        { textKey: 'games.quiz.questions.q4.options.b', spirit: 'fox' },
+        { textKey: 'games.quiz.questions.q4.options.c', spirit: 'rabbit' },
+      ],
+    },
+    {
+      id: 5,
+      questionKey: 'games.quiz.questions.q5.question',
+      options: [
+        { textKey: 'games.quiz.questions.q5.options.a', spirit: 'rabbit' },
+        { textKey: 'games.quiz.questions.q5.options.b', spirit: 'monkey' },
+        { textKey: 'games.quiz.questions.q5.options.c', spirit: 'fox' },
+      ],
+    },
   ];
 
   const spirits: Spirit[] = [
@@ -125,7 +143,7 @@ const Games = () => {
   const currentSpirit = result ? spirits.find(s => s.id === result) : null;
 
   return (
-    <section id="games" className="py-12 sm:py-16 lg:py-20 bg-cream relative overflow-hidden">
+    <section id="games" className="py-12 sm:py-16 lg:py-20 bg-navy relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           ref={ref}
@@ -134,10 +152,10 @@ const Games = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-wine mb-3 sm:mb-4 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-gold mb-3 sm:mb-4 px-4">
             {t('games.title')}
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl font-noto text-wine/80 px-4">
+          <p className="text-base sm:text-lg lg:text-xl font-noto text-cream/80 px-4">
             {t('games.subtitle')}
           </p>
         </motion.div>
@@ -150,13 +168,13 @@ const Games = () => {
             transition={{ duration: 0.6 }}
             className="max-w-2xl mx-auto"
           >
-            <div className="bg-white rounded-lg shadow-lg p-8 sm:p-10 border border-wine/20">
+            <div className="bg-sophisticated rounded-lg shadow-lg p-8 sm:p-10 border border-gold/30">
               <div className="text-center mb-6">
                 <Sparkles className="w-16 h-16 text-gold mx-auto mb-4" />
-                <h3 className="text-2xl sm:text-3xl font-playfair font-bold text-wine mb-4">
+                <h3 className="text-2xl sm:text-3xl font-playfair font-bold text-gold mb-4">
                   {t('games.quiz.title')}
                 </h3>
-                <p className="text-base sm:text-lg font-noto text-wine/70 mb-6 leading-relaxed">
+                <p className="text-base sm:text-lg font-noto text-cream/70 mb-6 leading-relaxed">
                   {t('games.quiz.description')}
                 </p>
               </div>
@@ -172,7 +190,7 @@ const Games = () => {
                     className="text-center"
                   >
                     <div className="text-5xl mb-2">{spirit.emoji}</div>
-                    <p className="text-xs font-noto text-wine/60">{t(spirit.nameKey)}</p>
+                    <p className="text-xs font-noto text-cream/60">{t(spirit.nameKey)}</p>
                   </motion.div>
                 ))}
               </div>
@@ -180,7 +198,7 @@ const Games = () => {
               {/* Play Button */}
               <button
                 onClick={startQuiz}
-                className="w-full py-3 px-8 rounded-md font-noto font-semibold text-cream bg-wine hover:bg-wine/90 transition-all duration-300"
+                className="w-full py-3 px-8 rounded-md font-noto font-semibold text-sophisticated bg-gold hover:bg-gold/90 transition-all duration-300"
               >
                 {t('games.playButton')}
               </button>
@@ -198,13 +216,13 @@ const Games = () => {
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              className="bg-white rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+              className="bg-sophisticated rounded-lg shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-gold/30"
               style={{ zIndex: 100000 }}
             >
               {/* Close Button */}
               <button
                 onClick={resetQuiz}
-                className="absolute top-4 right-4 text-wine hover:text-gold transition-colors z-10"
+                className="absolute top-4 right-4 text-gold hover:text-cream transition-colors z-10"
               >
                 <X size={28} />
               </button>
@@ -214,16 +232,16 @@ const Games = () => {
                 <div className="p-8 sm:p-10">
                   {/* Progress Bar */}
                   <div className="mb-8">
-                    <div className="flex justify-between text-sm font-noto text-wine/60 mb-2">
+                    <div className="flex justify-between text-sm font-noto text-cream/60 mb-2">
                       <span>{t('games.quiz.question')} {currentQuestion + 1}/{questions.length}</span>
                       <span>{Math.round(((currentQuestion) / questions.length) * 100)}%</span>
                     </div>
-                    <div className="h-2 bg-wine/20 rounded-full overflow-hidden">
+                    <div className="h-2 bg-gold/20 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         animate={{ width: `${((currentQuestion) / questions.length) * 100}%` }}
                         transition={{ duration: 0.5 }}
-                        className="h-full bg-wine"
+                        className="h-full bg-gold"
                       />
                     </div>
                   </div>
@@ -235,7 +253,7 @@ const Games = () => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    <h3 className="text-xl sm:text-2xl font-playfair font-bold text-wine mb-6 text-center">
+                    <h3 className="text-xl sm:text-2xl font-playfair font-bold text-gold mb-6 text-center">
                       {t(questions[currentQuestion].questionKey)}
                     </h3>
 
@@ -248,7 +266,7 @@ const Games = () => {
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.3, delay: index * 0.1 }}
                           onClick={() => handleAnswer(option.spirit)}
-                          className="w-full p-4 bg-cream rounded-md text-left font-noto text-wine hover:bg-gold/20 border border-wine/10 hover:border-wine/30 transition-all duration-300"
+                          className="w-full p-4 bg-navy rounded-md text-left font-noto text-cream hover:bg-gold/20 border border-gold/10 hover:border-gold/30 transition-all duration-300"
                         >
                           <span className="text-sm sm:text-base">{t(option.textKey)}</span>
                         </motion.button>
@@ -264,7 +282,7 @@ const Games = () => {
                     animate={{ scale: 1 }}
                     transition={{ duration: 0.5, type: 'spring' }}
                   >
-                    <h3 className="text-2xl sm:text-3xl font-playfair font-bold text-wine mb-6">
+                    <h3 className="text-2xl sm:text-3xl font-playfair font-bold text-gold mb-6">
                       {t('games.quiz.result.title')}
                     </h3>
                     
@@ -272,12 +290,12 @@ const Games = () => {
                       <>
                         <div className="mb-6">
                           <div className="text-8xl mb-4">{currentSpirit.emoji}</div>
-                          <h4 className="text-2xl font-playfair font-bold text-wine mb-2">
+                          <h4 className="text-2xl font-playfair font-bold text-gold mb-2">
                             {t(currentSpirit.nameKey)}
                           </h4>
                         </div>
                         
-                        <p className="text-base sm:text-lg font-noto text-wine/80 mb-8 leading-relaxed max-w-xl mx-auto">
+                        <p className="text-base sm:text-lg font-noto text-cream/80 mb-8 leading-relaxed max-w-xl mx-auto">
                           {t(currentSpirit.descriptionKey)}
                         </p>
                       </>
@@ -285,7 +303,7 @@ const Games = () => {
 
                     <button
                       onClick={resetQuiz}
-                      className="px-8 py-3 rounded-md font-noto font-semibold text-cream bg-wine hover:bg-wine/90 transition-all duration-300"
+                      className="px-8 py-3 rounded-md font-noto font-semibold text-sophisticated bg-gold hover:bg-gold/90 transition-all duration-300"
                     >
                       {t('games.quiz.playAgain')}
                     </button>

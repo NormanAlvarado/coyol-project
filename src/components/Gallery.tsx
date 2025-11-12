@@ -37,7 +37,7 @@ const Gallery = () => {
   ];
 
   return (
-    <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-cream">
+    <section id="gallery" className="py-12 sm:py-16 lg:py-20 bg-sophisticated">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
@@ -46,10 +46,10 @@ const Gallery = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-wine mb-3 sm:mb-4 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-gold mb-3 sm:mb-4 px-4">
             {t('gallery.title')}
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl font-noto text-wine/70 px-4">{t('gallery.subtitle')}</p>
+          <p className="text-base sm:text-lg lg:text-xl font-noto text-cream/70 px-4">{t('gallery.subtitle')}</p>
         </motion.div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
