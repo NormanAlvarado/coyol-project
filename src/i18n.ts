@@ -200,7 +200,7 @@ const resources = {
       },
       hero: {
         title: 'Prueba el Alma de Costa Rica',
-        subtitle: 'Vino que captura la esencia tropical',
+        subtitle: '코스타리카의 영혼을 담은 와인',
         cta: 'Descubre el Sabor',
       },
       about: {

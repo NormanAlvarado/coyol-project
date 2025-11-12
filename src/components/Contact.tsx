@@ -78,7 +78,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-wine/10 to-cream">
+    <section id="contact" className="py-12 sm:py-16 lg:py-20 bg-navy">
       <div className="container mx-auto px-4 sm:px-6">
         <motion.div
           ref={ref}
@@ -87,10 +87,10 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-10 sm:mb-12 lg:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-wine mb-3 sm:mb-4 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-playfair font-bold text-gold mb-3 sm:mb-4 px-4">
             {t('contact.title')}
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl font-noto text-wine/70 px-4">{t('contact.subtitle')}</p>
+          <p className="text-base sm:text-lg lg:text-xl font-noto text-cream/70 px-4">{t('contact.subtitle')}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 max-w-6xl mx-auto">
@@ -103,7 +103,7 @@ const Contact = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div>
-                <label htmlFor="name" className="block text-wine font-noto mb-2 text-sm sm:text-base">
+                <label htmlFor="name" className="block text-cream font-noto mb-2 text-sm sm:text-base">
                   {t('contact.name')}
                 </label>
                 <input
@@ -112,15 +112,15 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border text-sm sm:text-base ${
-                    errors.name ? 'border-red-500' : 'border-wine/20'
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border text-sm sm:text-base bg-sophisticated text-cream ${
+                    errors.name ? 'border-red-500' : 'border-gold/20'
                   } focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all font-noto`}
                 />
                 {errors.name && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.name}</p>}
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-wine font-noto mb-2 text-sm sm:text-base">
+                <label htmlFor="email" className="block text-cream font-noto mb-2 text-sm sm:text-base">
                   {t('contact.email')}
                 </label>
                 <input
@@ -129,15 +129,15 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border text-sm sm:text-base ${
-                    errors.email ? 'border-red-500' : 'border-wine/20'
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border text-sm sm:text-base bg-sophisticated text-cream ${
+                    errors.email ? 'border-red-500' : 'border-gold/20'
                   } focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all font-noto`}
                 />
                 {errors.email && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.email}</p>}
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-wine font-noto mb-2 text-sm sm:text-base">
+                <label htmlFor="message" className="block text-cream font-noto mb-2 text-sm sm:text-base">
                   {t('contact.message')}
                 </label>
                 <textarea
@@ -146,8 +146,8 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border text-sm sm:text-base ${
-                    errors.message ? 'border-red-500' : 'border-wine/20'
+                  className={`w-full px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg border text-sm sm:text-base bg-sophisticated text-cream ${
+                    errors.message ? 'border-red-500' : 'border-gold/20'
                   } focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none transition-all font-noto resize-none`}
                 />
                 {errors.message && <p className="text-red-500 text-xs sm:text-sm mt-1">{errors.message}</p>}
@@ -155,7 +155,7 @@ const Contact = () => {
 
               <button
                 type="submit"
-                className="w-full bg-wine text-cream px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-playfair text-base sm:text-lg font-bold hover:bg-gold hover:text-wine transition-all duration-300 hover:shadow-lg hover:shadow-gold/30 hover:scale-105"
+                className="w-full bg-gold text-sophisticated px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-playfair text-base sm:text-lg font-bold hover:bg-gold/90 transition-all duration-300 hover:shadow-lg hover:shadow-gold/30 hover:scale-105"
               >
                 {t('contact.send')}
               </button>
@@ -170,8 +170,8 @@ const Contact = () => {
             className="space-y-6 sm:space-y-8"
           >
             {/* Social Media */}
-            <div className="bg-wine/5 rounded-lg p-6 sm:p-8 border border-wine/10">
-              <h3 className="text-xl sm:text-2xl font-playfair font-bold text-wine mb-4 sm:mb-6">
+            <div className="bg-sophisticated rounded-lg p-6 sm:p-8 border border-gold/30">
+              <h3 className="text-xl sm:text-2xl font-playfair font-bold text-gold mb-4 sm:mb-6">
                 {t('contact.followUs')}
               </h3>
               <div className="flex space-x-4 sm:space-x-6">
@@ -179,7 +179,7 @@ const Contact = () => {
                   <a
                     key={social.name}
                     href={social.href}
-                    className={`w-12 h-12 sm:w-14 sm:h-14 bg-wine text-cream rounded-full flex items-center justify-center transition-all duration-300 ${social.color} hover:scale-110 hover:shadow-lg`}
+                    className={`w-12 h-12 sm:w-14 sm:h-14 bg-gold text-sophisticated rounded-full flex items-center justify-center transition-all duration-300 ${social.color} hover:scale-110 hover:shadow-lg`}
                     aria-label={social.name}
                   >
                     <social.icon className="text-xl sm:text-2xl" />
