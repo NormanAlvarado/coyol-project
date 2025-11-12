@@ -47,7 +47,7 @@ const Header = () => {
           {/* Logo */}
           <Link to="home" smooth={true} duration={500} className="cursor-pointer flex-shrink min-w-0">
             <h1 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-playfair font-bold text-gold hover:text-cream transition-colors truncate">
-              Vino Coyol Premium
+              Sidus
             </h1>
           </Link>
 

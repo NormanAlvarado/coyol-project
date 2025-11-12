@@ -44,7 +44,7 @@ const Heritage = () => {
             {/* Palm Tree Image */}
             <div className="relative mb-8 sm:mb-12">
               <img
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2913"
+                src="https://images-ext-1.discordapp.net/external/2lEim3aHfDBe2ZxZpuIZDnBNHyFQ5x3mYI3viMS5p1Y/https/vozdeguanacaste.com/wp-content/uploads/2018/03/2018_-_febrero_-_perfil_coyolero_-_cesar_arroyo-1.jpg?format=webp&width=1932&height=1288"
                 alt="Coyol Palm Tree"
                 className="w-full h-[250px] sm:h-[350px] lg:h-[400px] object-cover rounded-lg shadow-2xl"
               />
