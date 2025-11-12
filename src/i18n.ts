@@ -100,6 +100,22 @@ const resources = {
                 c: 'The fun entertainer',
               },
             },
+            q4: {
+              question: 'What type of food do you prefer?',
+              options: {
+                a: 'Adventurous and exotic dishes',
+                b: 'Sophisticated gourmet cuisine',
+                c: 'Comfort food and home-cooked meals',
+              },
+            },
+            q5: {
+              question: 'How do you handle stressful situations?',
+              options: {
+                a: 'I stay calm and think things through',
+                b: 'I keep a positive attitude and find humor',
+                c: 'I analyze strategically and find solutions',
+              },
+            },
           },
           spirits: {
             monkey: {
@@ -280,6 +296,22 @@ const resources = {
                 a: 'El líder estratégico',
                 b: 'El mediador pacífico',
                 c: 'El animador divertido',
+              },
+            },
+            q4: {
+              question: '¿Qué tipo de comida prefieres?',
+              options: {
+                a: 'Platos aventureros y exóticos',
+                b: 'Cocina gourmet sofisticada',
+                c: 'Comida reconfortante y casera',
+              },
+            },
+            q5: {
+              question: '¿Cómo manejas situaciones estresantes?',
+              options: {
+                a: 'Me mantengo calmado y pienso las cosas',
+                b: 'Mantengo una actitud positiva y encuentro humor',
+                c: 'Analizo estratégicamente y encuentro soluciones',
               },
             },
           },
@@ -548,8 +580,11 @@ const resources = {
         copyright: '© 2025 Sidus. 코스타리카에서 제작.',
       },
     },
-  },
+  }
 };
+
+// Configuración del detector de idioma
+
 
 // Configuración del detector de idioma
 const languageDetectorOptions = {

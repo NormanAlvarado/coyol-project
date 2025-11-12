@@ -59,6 +59,24 @@ const Games = () => {
         { textKey: 'games.quiz.questions.q3.options.c', spirit: 'monkey' },
       ],
     },
+    {
+      id: 4,
+      questionKey: 'games.quiz.questions.q4.question',
+      options: [
+        { textKey: 'games.quiz.questions.q4.options.a', spirit: 'monkey' },
+        { textKey: 'games.quiz.questions.q4.options.b', spirit: 'fox' },
+        { textKey: 'games.quiz.questions.q4.options.c', spirit: 'rabbit' },
+      ],
+    },
+    {
+      id: 5,
+      questionKey: 'games.quiz.questions.q5.question',
+      options: [
+        { textKey: 'games.quiz.questions.q5.options.a', spirit: 'rabbit' },
+        { textKey: 'games.quiz.questions.q5.options.b', spirit: 'monkey' },
+        { textKey: 'games.quiz.questions.q5.options.c', spirit: 'fox' },
+      ],
+    },
   ];
 
   const spirits: Spirit[] = [
