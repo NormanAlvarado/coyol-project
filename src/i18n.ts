@@ -20,7 +20,7 @@ const resources = {
       about: {
         title: 'The Art of Coyol',
         subtitle: 'An Exotic Journey',
-        description1: 'Vino Coyol Premium is a unique artisanal wine crafted from the exotic coyol fruit, a treasure of Costa Rican biodiversity. Each bottle captures the essence of tropical forests and centuries-old traditions.',
+        description1: 'Sidus is a unique artisanal wine crafted from the exotic coyol palm log, a treasure of Costa Rican biodiversity. Each bottle captures the essence of tropical forests and centuries-old traditions.',
         description2: 'Our meticulous production process combines ancestral knowledge with modern winemaking techniques, resulting in a sophisticated wine that embodies the richness of Costa Rican culture.',
         description3: 'Limited production, exclusive quality. Each vintage represents our commitment to sustainability and authenticity.',
       },
@@ -41,14 +41,14 @@ const resources = {
         },
         pairing: {
           title: 'Pairing',
-          description: 'Soft cheeses, white meats, tropical fruit desserts',
+          description: 'Savory dishes like: Chicken stew, Pajeon, and fried chicken',
         },
       },
       heritage: {
         title: 'Cultural Heritage',
         subtitle: 'Rooted in Tradition',
-        description1: 'The coyol palm has been part of Costa Rican culture for centuries. Indigenous communities revered this tree for its versatility and nutritional value.',
-        description2: 'Our wine honors this legacy, transforming the coyol fruit into an premium beverage that tells the story of our land.',
+        description1: 'The coyol palm has been part of Costa Rican culture for centuries. Villagers revered this tree for its versatility and nutritional value.',
+        description2: 'Our wine honors this legacy, transforming the coyol log into a premium beverage that shares our cultural identity through your local tales.',
         description3: 'We are committed to sustainable practices that protect our forests and support local communities, ensuring that this tradition lives on for future generations.',
       },
       gallery: {
@@ -65,7 +65,7 @@ const resources = {
         followUs: 'Follow Us',
       },
       footer: {
-        copyright: '© 2025 Vino Coyol Premium. Crafted in Costa Rica.',
+        copyright: '© 2025 Sidus. Crafted in Costa Rica.',
       },
     },
   },
@@ -87,7 +87,7 @@ const resources = {
       about: {
         title: '코욜의 예술',
         subtitle: '이국적인 여정',
-        description1: '비노 코욜 프리미엄은 코스타리카 생물다양성의 보물인 이국적인 코욜 과일로 만든 독특한 수제 와인입니다. 각 병은 열대 숲과 수세기에 걸친 전통의 본질을 담고 있습니다.',
+        description1: 'Sidus는 코스타리카 생물다양성의 보물인 이국적인 코욜 과일로 만든 독특한 수제 와인입니다. 각 병은 열대 숲과 수세기에 걸친 전통의 본질을 담고 있습니다.',
         description2: '우리의 세심한 생산 과정은 조상의 지식과 현대 양조 기술을 결합하여 코스타리카 문화의 풍요로움을 구현하는 세련된 와인을 만듭니다.',
         description3: '한정 생산, 독점 품질. 각 빈티지는 지속 가능성과 진정성에 대한 우리의 약속을 나타냅니다.',
       },
@@ -132,7 +132,7 @@ const resources = {
         followUs: '팔로우하기',
       },
       footer: {
-        copyright: '© 2025 비노 코욜 프리미엄. 코스타리카에서 제작.',
+        copyright: '© 2025 Sidus. 코스타리카에서 제작.',
       },
     },
   },
