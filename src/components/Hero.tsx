@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-scroll';
+import botellaImg from '../assets/botella.jpeg';
 
 const Hero = () => {
   const { t } = useTranslation();
@@ -11,18 +12,18 @@ const Hero = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-wine via-wine/90 to-sophisticated"
     >
       {/* Parallax Background Effect */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-30">
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?q=80&w=2940')",
+            backgroundImage: `url(${botellaImg})`,
             transform: 'scale(1.1)',
           }}
         />
       </div>
 
       {/* Golden Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-wine/80 via-transparent to-wine/40" />
+      <div className="absolute inset-0 bg-gradient-to-t from-wine/60 via-transparent to-wine/30" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto py-20 md:py-0">

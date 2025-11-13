@@ -71,10 +71,14 @@ const Header = () => {
       <div className="w-full px-3 sm:px-4 md:px-6 lg:px-8 max-w-screen-2xl mx-auto">
         <nav className="flex items-center justify-between py-2.5 sm:py-3 md:py-4 gap-2">
           {/* Logo */}
-          <Link to="home" smooth={true} duration={500} className="cursor-pointer flex-shrink min-w-0">
-            <h1 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-playfair font-bold text-gold hover:text-cream transition-colors truncate">
-              Sidus
-            </h1>
+          <Link to="home" smooth={true} duration={500} className="cursor-pointer flex-shrink min-w-0 overflow-hidden">
+            <div className="h-10 sm:h-12 md:h-14 lg:h-16 w-32 sm:w-40 md:w-48 lg:w-56 overflow-hidden">
+              <img 
+                src="https://media.discordapp.net/attachments/1092348611632828446/1438363964198359120/Sidus_lettering.png?ex=69169c54&is=69154ad4&hm=ae245d364c18fad4bd41622e1748170324a9289d1c3a42db159333c453fa104a&=&format=webp&quality=lossless&width=1792&height=1338" 
+                alt="Sidus" 
+                className="h-full w-auto object-cover object-left scale-[3.5] translate-x-12"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
