@@ -23,7 +23,7 @@ const resources = {
       },
       about: {
         title: 'The Art of Coyol',
-        subtitle: 'An Exotic Journey',
+        subtitle: 'A wine born under the same moon, fermented by two souls',
         description1: 'Sidus is a unique artisanal wine crafted from the exotic coyol palm log, a treasure of Costa Rican biodiversity. Each bottle captures the essence of tropical forests and centuries-old traditions.',
         description2: 'Our meticulous production process combines ancestral knowledge with modern winemaking techniques, resulting in a sophisticated wine that embodies the richness of Costa Rican culture.',
         description3: 'Limited production, exclusive quality. Each vintage represents our commitment to sustainability and authenticity.',
@@ -221,7 +221,7 @@ const resources = {
       },
       about: {
         title: 'El Arte del Coyol',
-        subtitle: 'Un Viaje Exótico',
+        subtitle: 'Un vino nacido bajo la misma luna, fermentado por dos almas',
         description1: 'Sidus es un vino artesanal único elaborado a partir del exótico tronco de palma de coyol, un tesoro de la biodiversidad costarricense. Cada botella captura la esencia de los bosques tropicales y tradiciones centenarias.',
         description2: 'Nuestro meticuloso proceso de producción combina conocimiento ancestral con técnicas modernas de vinificación, resultando en un vino sofisticado que encarna la riqueza de la cultura costarricense.',
         description3: 'Producción limitada, calidad exclusiva. Cada cosecha representa nuestro compromiso con la sostenibilidad y autenticidad.',
@@ -419,7 +419,7 @@ const resources = {
       },
       about: {
         title: '코욜의 예술',
-        subtitle: '이국적인 여정',
+        subtitle: '같은 달 아래 태어나 두 영혼이 발효시킨 와인',
         description1: 'Sidus는 코스타리카 생물다양성의 보물인 이국적인 코욜 과일로 만든 독특한 수제 와인입니다. 각 병은 열대 숲과 수세기에 걸친 전통의 본질을 담고 있습니다.',
         description2: '우리의 세심한 생산 과정은 조상의 지식과 현대 양조 기술을 결합하여 코스타리카 문화의 풍요로움을 구현하는 세련된 와인을 만듭니다.',
         description3: '한정 생산, 독점 품질. 각 빈티지는 지속 가능성과 진정성에 대한 우리의 약속을 나타냅니다.',

@@ -7,8 +7,8 @@ import Heritage from './components/Heritage';
 import Games from './components/Games';
 import BehindTheWine from './components/BehindTheWine';
 import Biodiversity from './components/Biodiversity';
-import Gallery from './components/Gallery';
-import Contact from './components/Contact';
+
+
 import Footer from './components/Footer';
 
 function App() {
@@ -22,8 +22,6 @@ function App() {
       <Games />
       <BehindTheWine />
       <Biodiversity />
-      <Gallery />
-      <Contact />
       <Footer />
     </div>
   );

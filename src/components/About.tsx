@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import logoImg from '../assets/logo.jpeg';
 
 const About = () => {
   const { t } = useTranslation();
@@ -34,7 +35,7 @@ const About = () => {
           >
             <div className="relative overflow-hidden rounded-lg shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1586370434639-0fe43b2d32d6?q=80&w=2940"
+                src={logoImg}
                 alt="Coyol Wine Bottle"
                 className="w-full h-[300px] sm:h-[400px] md:h-[450px] lg:h-[500px] object-cover hover:scale-110 transition-transform duration-500"
               />
